@@ -1,0 +1,37 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{jirafaGraph Asymmetric Encryption}
+\date{}
+\begin{document}
+\maketitle
+
+
+    Let $G$ be a complete graph of order $n$ s.t. each node is weighted with an ordered pair from $\{(e_i, p_i)| p_i\in\mathbb{Z}\ni p\text{ is prime, }e_i\in\mathbb{Z}\ni\0\leq x< p\}$. Then, we can consider each $e_i$ to be an encryption key with a corresponding decryption key in the set $\{(p_i-e_i, p_i)| i\in\mathbb{Z}\ni 0\leq i\leq n\}$. % Recall, we know this because each $p_i$ being prime implies each $e_i$ is coprime to the modulus, which means that 
+
+    Suppose Alice sends Bob a message that is represented by the number $b$, where $0\leq b< i$, where $i$ is the minimum of $\{p_i\}$. Now, let $p=(p_0, p_1, \dots, p_{n-1})=((a_0, b_0), \dots, (a_{l-1}, b_{l-1})$ be a path through the graph of length $l$. Without loss of generalization, assume $l=3$.
+
+    Then, we can describe a sequence of applications of asymmetric encryption where we apply each encryption key to the message $m$ knowing that this is a bijective mapping producing ciphertext $c$, as follows:
+    $$
+        c=\bigg(\big(m^{a_0}\big)^{a_1}\bigg)^{a_2}.
+    $$\\
+
+    Similarly, we observe that we can decrypt the ciphertext $c$ as follows:
+    $$
+        m=\bigg(\big(c^{b_0}\big)^{b_1}\bigg)^{b_2}.
+    $$
+
+
+\end{document}
