@@ -33,5 +33,6 @@
         m=\bigg(\big(c^{b_0}\big)^{b_1}\bigg)^{b_2}.
     $$
 
+    Not only would this allow for the ability to encrypt a block cipher key in a manner that requires multiple parties to supply a decryption key, but also would make a fun game for grad students to research breaking Tor. One could make an API that allows one to play CTF where the red team would have the opportunity to attempt to break various combinations of key negotiation (e.g. CRYSTAL-Kyber, Diffie-Helman Exchange) and block ciphers (e.g. AES).
 
 \end{document}
